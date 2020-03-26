@@ -7,6 +7,9 @@
 <match fluent.**>
   @type null
 </match>
+<match kubernetes.var.log.containers.**kube-system**.log>
+  @type null
+</match>
 
 <source>
   @type tail

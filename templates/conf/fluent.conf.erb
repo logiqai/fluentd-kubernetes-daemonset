@@ -276,7 +276,7 @@
   @id out_kube_remote_syslog
   host "#{ENV['SYSLOG_HOST']}"
   port "#{ENV['SYSLOG_PORT']}"
-  severity debug
+  severity info
   program fluentd
   hostname ${kubernetes_host}
 
@@ -288,10 +288,10 @@
 
   <buffer kubernetes_host>
   </buffer>
-
   <format>
-    @type ltsv
+    @type json
   </format>
+
 </match>
 
 <% when "forward" %>
