@@ -271,6 +271,13 @@
 </match>
 
 <% when "syslog" %>
+<filter **>
+   @type record_transformer
+   <record>
+     cluster_id "#{ENV['CLUSTER_ID']}"
+   </record>
+</filter>
+
 <match **>
   @type remote_syslog
   @id out_kube_remote_syslog
